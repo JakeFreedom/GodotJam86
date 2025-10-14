@@ -1,0 +1,120 @@
+[gd_scene load_steps=10 format=3 uid="uid://dmou282jfbv3q"]
+
+[ext_resource type="Script" uid="uid://dufnd04ltjp73" path="res://Tests/room_testing.gd" id="1_hyt7m"]
+[ext_resource type="PackedScene" uid="uid://dk11qmi4qtgnu" path="res://door_way_detector.tscn" id="2_fnfi2"]
+[ext_resource type="Texture2D" uid="uid://bqexhx5gfbovj" path="res://Imports/wall_1.png" id="2_gnhyj"]
+[ext_resource type="PackedScene" uid="uid://bc0aer2w073l" path="res://Scenes/player.tscn" id="2_xke0a"]
+[ext_resource type="Texture2D" uid="uid://ro6mm54cxgye" path="res://Imports/land.png" id="3_bfsdq"]
+[ext_resource type="PackedScene" uid="uid://colcm54k21fvp" path="res://Scenes/door.tscn" id="3_gnhyj"]
+[ext_resource type="PackedScene" uid="uid://v6v2h8k44pu5" path="res://Scenes/KeyPad.tscn" id="4_bfsdq"]
+[ext_resource type="PackedScene" uid="uid://dimor6e7kw82b" path="res://camera_2d.tscn" id="7_bfsdq"]
+[ext_resource type="Texture2D" uid="uid://i0k63o8y238u" path="res://Imports/OpenDoor.png" id="8_nc2vx"]
+
+[node name="RoomTesting" type="Node2D"]
+script = ExtResource("1_hyt7m")
+
+[node name="DoorWayDetector" parent="." node_paths=PackedStringArray("mainCam") instance=ExtResource("2_fnfi2")]
+position = Vector2(617, 99)
+mainCam = NodePath("../Camera2D")
+direction = Vector2(0, -1)
+
+[node name="DoorWayDetector2" parent="." node_paths=PackedStringArray("mainCam") instance=ExtResource("2_fnfi2")]
+position = Vector2(1192, 334)
+rotation = 1.5708
+mainCam = NodePath("../Camera2D")
+direction = Vector2(0, -1)
+
+[node name="Floor" type="Node2D" parent="."]
+
+[node name="Land" type="Sprite2D" parent="Floor"]
+position = Vector2(752, 32)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_bfsdq")
+
+[node name="Walls" type="Node2D" parent="."]
+position = Vector2(0, 62)
+
+[node name="Wall1" type="Sprite2D" parent="Walls"]
+position = Vector2(731, 23)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gnhyj")
+
+[node name="Wall2" type="Sprite2D" parent="Walls"]
+position = Vector2(807, 23)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gnhyj")
+
+[node name="Wall3" type="Sprite2D" parent="Walls"]
+position = Vector2(883.5, 23)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gnhyj")
+
+[node name="Wall4" type="Sprite2D" parent="Walls"]
+position = Vector2(960, 23)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gnhyj")
+
+[node name="Wall5" type="Sprite2D" parent="Walls"]
+position = Vector2(1197, 383)
+rotation = 1.5708
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gnhyj")
+
+[node name="Node2D" parent="." instance=ExtResource("2_xke0a")]
+position = Vector2(1079, 368)
+
+[node name="Door_2" parent="." instance=ExtResource("3_gnhyj")]
+position = Vector2(646, 63)
+keyPad = ExtResource("4_bfsdq")
+DoorID = 2
+DoorKeyCode = 9564
+openDoorSprite = ExtResource("8_nc2vx")
+
+[node name="Door_3" parent="." instance=ExtResource("3_gnhyj")]
+position = Vector2(1220, 362)
+rotation = 1.5708
+keyPad = ExtResource("4_bfsdq")
+DoorID = 3
+DoorKeyCode = 1111
+openDoorSprite = ExtResource("8_nc2vx")
+
+[node name="Door_4" parent="." instance=ExtResource("3_gnhyj")]
+position = Vector2(61, 362)
+rotation = -1.5708
+DoorID = 4
+
+[node name="Door_5" parent="." instance=ExtResource("3_gnhyj")]
+position = Vector2(660, 656)
+rotation = 3.14159
+DoorID = 5
+lockType = 1
+
+[node name="Camera2D" parent="." instance=ExtResource("7_bfsdq")]
+position = Vector2(640, 360)
+
+[node name="Control" type="Control" parent="Camera2D"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4

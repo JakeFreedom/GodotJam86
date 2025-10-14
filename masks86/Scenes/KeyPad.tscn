@@ -1,0 +1,173 @@
+[gd_scene load_steps=8 format=3 uid="uid://v6v2h8k44pu5"]
+
+[ext_resource type="Script" uid="uid://cl55b4gdvjdkt" path="res://Scripts/key_pad.gd" id="1_hswn3"]
+[ext_resource type="Texture2D" uid="uid://cotrsraepvkka" path="res://Imports/KeyPad.png" id="1_p84af"]
+[ext_resource type="Texture2D" uid="uid://bqexhx5gfbovj" path="res://Imports/wall_1.png" id="2_6wrfb"]
+[ext_resource type="Script" uid="uid://jth0unbytdqg" path="res://Scripts/number_1.gd" id="3_hn84l"]
+[ext_resource type="Texture2D" uid="uid://darvijbqv4jtn" path="res://Imports/wall_7.png" id="3_rhbgq"]
+[ext_resource type="Texture2D" uid="uid://dukorgw60ic1n" path="res://Imports/decor_13.png" id="4_23gyr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hswn3"]
+size = Vector2(55, 53)
+
+[node name="DoorKeyPad" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hswn3")
+
+[node name="Wall" type="Node2D" parent="."]
+position = Vector2(-712, -351)
+
+[node name="Wall1" type="Sprite2D" parent="Wall"]
+position = Vector2(319, 349)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_6wrfb")
+
+[node name="Wall3" type="Sprite2D" parent="Wall"]
+position = Vector2(959, 349)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_6wrfb")
+
+[node name="Wall2" type="Sprite2D" parent="Wall"]
+visible = false
+position = Vector2(387, 286)
+texture = ExtResource("2_6wrfb")
+
+[node name="Wall7" type="Sprite2D" parent="Wall"]
+visible = false
+position = Vector2(605, 290)
+texture = ExtResource("3_rhbgq")
+
+[node name="Wall8" type="Sprite2D" parent="Wall"]
+visible = false
+position = Vector2(669, 290)
+texture = ExtResource("3_rhbgq")
+
+[node name="Decor13" type="Sprite2D" parent="Wall"]
+position = Vector2(215, 300)
+scale = Vector2(2, 2)
+texture = ExtResource("4_23gyr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="."]
+process_mode = 3
+layout_mode = 2
+offset_left = 139.0
+offset_top = 91.0
+offset_right = 197.0
+offset_bottom = 122.0
+text = "CLOSE
+"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_p84af")
+
+[node name="NumberPadButtons" type="Node2D" parent="."]
+
+[node name="Number1" type="Area2D" parent="NumberPadButtons"]
+process_mode = 2
+position = Vector2(-80, -75)
+script = ExtResource("3_hn84l")
+number = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NumberPadButtons/Number1"]
+process_mode = 2
+shape = SubResource("RectangleShape2D_hswn3")
+
+[node name="Number2" type="Area2D" parent="NumberPadButtons"]
+process_mode = 2
+position = Vector2(0, -74)
+script = ExtResource("3_hn84l")
+number = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NumberPadButtons/Number2"]
+process_mode = 2
+shape = SubResource("RectangleShape2D_hswn3")
+
+[node name="Number3" type="Area2D" parent="NumberPadButtons"]
+process_mode = 2
+position = Vector2(81, -74)
+script = ExtResource("3_hn84l")
+number = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NumberPadButtons/Number3"]
+process_mode = 2
+shape = SubResource("RectangleShape2D_hswn3")
+
+[node name="Number4" type="Area2D" parent="NumberPadButtons"]
+process_mode = 2
+position = Vector2(-81, 6)
+script = ExtResource("3_hn84l")
+number = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NumberPadButtons/Number4"]
+process_mode = 2
+shape = SubResource("RectangleShape2D_hswn3")
+
+[node name="Number5" type="Area2D" parent="NumberPadButtons"]
+process_mode = 2
+position = Vector2(0, 6)
+script = ExtResource("3_hn84l")
+number = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NumberPadButtons/Number5"]
+process_mode = 2
+shape = SubResource("RectangleShape2D_hswn3")
+
+[node name="Number6" type="Area2D" parent="NumberPadButtons"]
+process_mode = 2
+position = Vector2(80, 6)
+script = ExtResource("3_hn84l")
+number = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NumberPadButtons/Number6"]
+process_mode = 2
+shape = SubResource("RectangleShape2D_hswn3")
+
+[node name="Number7" type="Area2D" parent="NumberPadButtons"]
+process_mode = 2
+position = Vector2(-80, 85)
+script = ExtResource("3_hn84l")
+number = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NumberPadButtons/Number7"]
+process_mode = 2
+shape = SubResource("RectangleShape2D_hswn3")
+
+[node name="Number8" type="Area2D" parent="NumberPadButtons"]
+process_mode = 2
+position = Vector2(0, 85)
+script = ExtResource("3_hn84l")
+number = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NumberPadButtons/Number8"]
+process_mode = 2
+shape = SubResource("RectangleShape2D_hswn3")
+
+[node name="Number9" type="Area2D" parent="NumberPadButtons"]
+process_mode = 2
+position = Vector2(81, 85)
+script = ExtResource("3_hn84l")
+number = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NumberPadButtons/Number9"]
+process_mode = 2
+shape = SubResource("RectangleShape2D_hswn3")
