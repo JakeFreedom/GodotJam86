@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://duoe28rl0cp82"]
+
+[ext_resource type="Script" uid="uid://bicxthf2dw3oo" path="res://Scripts/door_key.gd" id="1_3thkj"]
+[ext_resource type="Texture2D" uid="uid://bdnsd3e3ly523" path="res://Imports/decor_34.png" id="2_45r7i"]
+
+[node name="DoorKey" type="Node2D"]
+script = ExtResource("1_3thkj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_45r7i")

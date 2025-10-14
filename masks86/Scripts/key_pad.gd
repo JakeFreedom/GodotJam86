@@ -11,14 +11,9 @@ var code: Array
 func _ready()-> void:
 	close_button.pressed.connect(OnClosePressed)
 
-
-
-
 func OnClosePressed() -> void:
-	print("close window")
 	get_tree().paused = false
 	queue_free()
-
 
 func PrintNumber(num) -> void:
 	code.append(num)

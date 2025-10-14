@@ -59,6 +59,7 @@ MouseClick={
 [layer_names]
 
 2d_physics/layer_1="Player"
+2d_physics/layer_10="Items"
 2d_physics/layer_11="Door_Detectors"
 2d_physics/layer_12="Doors"
 2d_physics/layer_13="Door_Way_Detector"

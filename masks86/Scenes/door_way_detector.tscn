@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dk11qmi4qtgnu"]
 
-[ext_resource type="Script" uid="uid://bpmibalkot843" path="res://door_way_detector.gd" id="1_0qoe6"]
+[ext_resource type="Script" uid="uid://bpmibalkot843" path="res://Scripts/door_way_detector.gd" id="1_0qoe6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g80a2"]
 size = Vector2(141, 20)

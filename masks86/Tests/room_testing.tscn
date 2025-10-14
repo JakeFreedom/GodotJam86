@@ -1,14 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://dmou282jfbv3q"]
+[gd_scene load_steps=14 format=3 uid="uid://dmou282jfbv3q"]
 
 [ext_resource type="Script" uid="uid://dufnd04ltjp73" path="res://Tests/room_testing.gd" id="1_hyt7m"]
-[ext_resource type="PackedScene" uid="uid://dk11qmi4qtgnu" path="res://door_way_detector.tscn" id="2_fnfi2"]
+[ext_resource type="PackedScene" uid="uid://dk11qmi4qtgnu" path="res://Scenes/door_way_detector.tscn" id="2_fnfi2"]
 [ext_resource type="Texture2D" uid="uid://bqexhx5gfbovj" path="res://Imports/wall_1.png" id="2_gnhyj"]
 [ext_resource type="PackedScene" uid="uid://bc0aer2w073l" path="res://Scenes/player.tscn" id="2_xke0a"]
 [ext_resource type="Texture2D" uid="uid://ro6mm54cxgye" path="res://Imports/land.png" id="3_bfsdq"]
 [ext_resource type="PackedScene" uid="uid://colcm54k21fvp" path="res://Scenes/door.tscn" id="3_gnhyj"]
 [ext_resource type="PackedScene" uid="uid://v6v2h8k44pu5" path="res://Scenes/KeyPad.tscn" id="4_bfsdq"]
-[ext_resource type="PackedScene" uid="uid://dimor6e7kw82b" path="res://camera_2d.tscn" id="7_bfsdq"]
+[ext_resource type="Texture2D" uid="uid://cvmtpfahoksd3" path="res://Imports/wall_2.png" id="5_i6fl3"]
+[ext_resource type="Texture2D" uid="uid://b073ubt0fvg4u" path="res://Imports/wall_9.png" id="6_o081h"]
+[ext_resource type="PackedScene" uid="uid://dimor6e7kw82b" path="res://Scenes/camera_2d.tscn" id="7_bfsdq"]
 [ext_resource type="Texture2D" uid="uid://i0k63o8y238u" path="res://Imports/OpenDoor.png" id="8_nc2vx"]
+[ext_resource type="PackedScene" uid="uid://cx26en5dk73ei" path="res://Scenes/item.tscn" id="10_tqfh3"]
+[ext_resource type="Texture2D" uid="uid://dwlhwcbg0gqk2" path="res://Imports/EmptyShelf.png" id="13_slxp1"]
 
 [node name="RoomTesting" type="Node2D"]
 script = ExtResource("1_hyt7m")
@@ -60,6 +64,84 @@ rotation = 1.5708
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_gnhyj")
 
+[node name="Wall6" type="Sprite2D" parent="Walls"]
+position = Vector2(1197, 460)
+rotation = 1.5708
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gnhyj")
+
+[node name="Wall7" type="Sprite2D" parent="Walls"]
+position = Vector2(1197, 536)
+rotation = 1.5708
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gnhyj")
+
+[node name="Wall8" type="Sprite2D" parent="Walls"]
+position = Vector2(743, 573)
+rotation = 3.14159
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gnhyj")
+
+[node name="Wall9" type="Sprite2D" parent="Walls"]
+position = Vector2(819, 573)
+rotation = 3.14159
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gnhyj")
+
+[node name="Wall10" type="Sprite2D" parent="Walls"]
+position = Vector2(895, 573)
+rotation = 3.14159
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gnhyj")
+
+[node name="Wall11" type="Sprite2D" parent="Walls"]
+position = Vector2(971, 573)
+rotation = 3.14159
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gnhyj")
+
+[node name="Wall12" type="Sprite2D" parent="Walls"]
+position = Vector2(1047, 573)
+rotation = 3.14159
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gnhyj")
+
+[node name="Wall13" type="Sprite2D" parent="Walls"]
+position = Vector2(1123, 573)
+rotation = 3.14159
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gnhyj")
+
+[node name="Wall14" type="Sprite2D" parent="Walls"]
+position = Vector2(1171, 573)
+rotation = 3.14159
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_i6fl3")
+
+[node name="Wall15" type="Sprite2D" parent="Walls"]
+position = Vector2(1190, 573)
+rotation = 3.14159
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_i6fl3")
+
+[node name="Wall18" type="Sprite2D" parent="Walls"]
+position = Vector2(1226, 601)
+rotation = 1.5708
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_o081h")
+
+[node name="Wall17" type="Sprite2D" parent="Walls"]
+position = Vector2(1226, 583)
+rotation = 1.5708
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_o081h")
+
+[node name="Wall16" type="Sprite2D" parent="Walls"]
+position = Vector2(1209, 573)
+rotation = 3.14159
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_i6fl3")
+
 [node name="Node2D" parent="." instance=ExtResource("2_xke0a")]
 position = Vector2(1079, 368)
 
@@ -104,6 +186,7 @@ offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
+mouse_filter = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/Control"]
 layout_mode = 1
@@ -118,3 +201,15 @@ grow_vertical = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="Camera2D/Control/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
+
+[node name="Room Objects" type="Node2D" parent="."]
+
+[node name="EmptyShelf" type="Sprite2D" parent="Room Objects"]
+position = Vector2(1166, 574)
+rotation = 1.5708
+texture = ExtResource("13_slxp1")
+
+[node name="Item" parent="." instance=ExtResource("10_tqfh3")]
+position = Vector2(1161, 574)
+ItemID = 1
+Description = "A Golden Key that can unlock golden locks."
