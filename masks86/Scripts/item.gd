@@ -3,14 +3,18 @@ extends Node2D
 
 signal PickUpItem
 
-@export var visual: PackedScene
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
+#@export var visual: PackedScene
+@export var ItemTexture: Texture
 @export var ItemID: int
 @export var Description: String
 
 func _ready() -> void:
 	get_node("Area2D").PickUpItem.connect(PickUpItemHandler)
-	var vis = visual.instantiate()
-	add_child(vis)
+	sprite_2d.texture = ItemTexture
+	#var vis = visual.instantiate()
+	#add_child(vis)
 	
 	
 func PickUpItemHandler() -> void:
@@ -21,6 +25,7 @@ func PickUpItemHandler() -> void:
 	#I personally thing the player should ask to see the inventory
 	#and should have to ask to take or put items(Not in a permissions) type way, but just 
 	#in a messages type system
+	#print(visual)
 	var p = get_tree().get_first_node_in_group("Player") as Player
 	p.AddItemToInventory(self)
 	call_deferred("queue_free")

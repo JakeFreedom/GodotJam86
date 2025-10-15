@@ -12,8 +12,9 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	var vector = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	velocity = vector * 800 
+	velocity = vector * 350 #This speed will need to be adjusted. Just have it high now for testing purposes
 	
+	#We are keeping track of this for the camera slide, so we know which direction to slide the camera
 	if vector != Vector2.ZERO:
 		lastVelocity = vector
 		
@@ -22,15 +23,15 @@ func _process(delta: float) -> void:
 	
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Inventory"):
-		var invUI = owner.get_parent().get_node("InventoryUI")
-		if invUI != null:
-			invUI.queue_free()
+		if owner.get_parent().has_node("InventoryUI"):
+			var invUI = owner.get_parent().get_node("InventoryUI")
+			if invUI != null:
+				invUI.queue_free()
 		else:
 			var ui = InventoryUI.instantiate()
 			ui.Populate(ourInventory)
 			owner.get_parent().add_child(ui)
-		
-	pass
+			
 	
 func _unhandled_input(event: InputEvent) -> void:
 	pass
@@ -38,3 +39,12 @@ func _unhandled_input(event: InputEvent) -> void:
 func AddItemToInventory(item: Item) -> void:
 	ourInventory.AddItem(item)
 	#ourInventory.PrintInventoryItems()
+
+#Not sure this is the best way to do this
+#Do we pass in what we are looking for
+#Example, door key
+func CheckInventory() -> Inventory:
+	return ourInventory
+	
+func IAmThePlayer() -> void:
+	print("I am the player")

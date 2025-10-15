@@ -5,20 +5,20 @@
 [ext_resource type="PackedScene" uid="uid://bf475n3oi0bui" path="res://inventory_ui.tscn" id="2_vgqql"]
 [ext_resource type="PackedScene" uid="uid://cgypqmip5ejnt" path="res://inventory.tscn" id="3_6t5aa"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
-radius = 35.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
+size = Vector2(39, 39)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
-collision_mask = 7680
+collision_mask = 7936
 motion_mode = 1
 script = ExtResource("1_onrkg")
 InventoryUI = ExtResource("2_vgqql")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_4flbx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_onrkg")
+shape = SubResource("RectangleShape2D_vgqql")
 
 [node name="Inventory" parent="." instance=ExtResource("3_6t5aa")]

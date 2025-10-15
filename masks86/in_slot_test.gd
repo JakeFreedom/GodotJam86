@@ -9,5 +9,4 @@ func _ready() -> void:
 	
 func SetSlotItem(item: Item):
 	print("Set Slot" + str(item.ItemID))
-	
 	pass

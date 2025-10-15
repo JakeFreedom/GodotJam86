@@ -1,37 +1,67 @@
-[gd_scene load_steps=14 format=3 uid="uid://dmou282jfbv3q"]
+[gd_scene load_steps=19 format=3 uid="uid://dmou282jfbv3q"]
 
 [ext_resource type="Script" uid="uid://dufnd04ltjp73" path="res://Tests/room_testing.gd" id="1_hyt7m"]
-[ext_resource type="PackedScene" uid="uid://dk11qmi4qtgnu" path="res://Scenes/door_way_detector.tscn" id="2_fnfi2"]
 [ext_resource type="Texture2D" uid="uid://bqexhx5gfbovj" path="res://Imports/wall_1.png" id="2_gnhyj"]
+[ext_resource type="Script" uid="uid://cjy5mrn8igmw4" path="res://Tests/floor.gd" id="2_vhx0h"]
 [ext_resource type="PackedScene" uid="uid://bc0aer2w073l" path="res://Scenes/player.tscn" id="2_xke0a"]
 [ext_resource type="Texture2D" uid="uid://ro6mm54cxgye" path="res://Imports/land.png" id="3_bfsdq"]
 [ext_resource type="PackedScene" uid="uid://colcm54k21fvp" path="res://Scenes/door.tscn" id="3_gnhyj"]
 [ext_resource type="PackedScene" uid="uid://v6v2h8k44pu5" path="res://Scenes/KeyPad.tscn" id="4_bfsdq"]
-[ext_resource type="Texture2D" uid="uid://cvmtpfahoksd3" path="res://Imports/wall_2.png" id="5_i6fl3"]
-[ext_resource type="Texture2D" uid="uid://b073ubt0fvg4u" path="res://Imports/wall_9.png" id="6_o081h"]
+[ext_resource type="PackedScene" uid="uid://dl6m1ar5of02e" path="res://wall_piece.tscn" id="5_i6fl3"]
 [ext_resource type="PackedScene" uid="uid://dimor6e7kw82b" path="res://Scenes/camera_2d.tscn" id="7_bfsdq"]
 [ext_resource type="Texture2D" uid="uid://i0k63o8y238u" path="res://Imports/OpenDoor.png" id="8_nc2vx"]
 [ext_resource type="PackedScene" uid="uid://cx26en5dk73ei" path="res://Scenes/item.tscn" id="10_tqfh3"]
 [ext_resource type="Texture2D" uid="uid://dwlhwcbg0gqk2" path="res://Imports/EmptyShelf.png" id="13_slxp1"]
+[ext_resource type="Texture2D" uid="uid://bdnsd3e3ly523" path="res://Imports/decor_34.png" id="14_o081h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_slxp1"]
+size = Vector2(572, 74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3tu3w"]
+size = Vector2(556, 74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vhx0h"]
+size = Vector2(583, 74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o081h"]
+size = Vector2(547, 74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i6fl3"]
+size = Vector2(20, 230)
 
 [node name="RoomTesting" type="Node2D"]
 script = ExtResource("1_hyt7m")
 
-[node name="DoorWayDetector" parent="." node_paths=PackedStringArray("mainCam") instance=ExtResource("2_fnfi2")]
-position = Vector2(617, 99)
-mainCam = NodePath("../Camera2D")
-direction = Vector2(0, -1)
-
-[node name="DoorWayDetector2" parent="." node_paths=PackedStringArray("mainCam") instance=ExtResource("2_fnfi2")]
-position = Vector2(1192, 334)
-rotation = 1.5708
-mainCam = NodePath("../Camera2D")
-direction = Vector2(0, -1)
-
 [node name="Floor" type="Node2D" parent="."]
+script = ExtResource("2_vhx0h")
+floorTile = ExtResource("3_bfsdq")
 
 [node name="Land" type="Sprite2D" parent="Floor"]
-position = Vector2(752, 32)
+position = Vector2(710, 238)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_bfsdq")
+
+[node name="Land3" type="Sprite2D" parent="Floor"]
+visible = false
+position = Vector2(710, 366)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_bfsdq")
+
+[node name="Land4" type="Sprite2D" parent="Floor"]
+visible = false
+position = Vector2(710, 494)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_bfsdq")
+
+[node name="Land5" type="Sprite2D" parent="Floor"]
+visible = false
+position = Vector2(710, 622)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_bfsdq")
+
+[node name="Land2" type="Sprite2D" parent="Floor"]
+visible = false
+position = Vector2(710, 110)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_bfsdq")
 
@@ -58,20 +88,53 @@ position = Vector2(960, 23)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_gnhyj")
 
+[node name="Wall29" type="Sprite2D" parent="Walls"]
+position = Vector2(1036, 23)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gnhyj")
+
+[node name="Wall30" type="Sprite2D" parent="Walls"]
+position = Vector2(1112, 23)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gnhyj")
+
+[node name="Wall35" type="Sprite2D" parent="Walls"]
+position = Vector2(1188, 23)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gnhyj")
+
+[node name="Wall31" type="Sprite2D" parent="Walls"]
+position = Vector2(1200.4, 39.4)
+rotation = 1.5708
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gnhyj")
+
+[node name="Wall32" type="Sprite2D" parent="Walls"]
+position = Vector2(1200.4, 115.4)
+rotation = 1.5708
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gnhyj")
+
+[node name="Wall33" type="Sprite2D" parent="Walls"]
+position = Vector2(1200.4, 191.4)
+rotation = 1.5708
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gnhyj")
+
+[node name="Wall34" type="Sprite2D" parent="Walls"]
+position = Vector2(1200.4, 219.4)
+rotation = 1.5708
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gnhyj")
+
 [node name="Wall5" type="Sprite2D" parent="Walls"]
-position = Vector2(1197, 383)
+position = Vector2(1200, 383)
 rotation = 1.5708
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_gnhyj")
 
 [node name="Wall6" type="Sprite2D" parent="Walls"]
-position = Vector2(1197, 460)
-rotation = 1.5708
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_gnhyj")
-
-[node name="Wall7" type="Sprite2D" parent="Walls"]
-position = Vector2(1197, 536)
+position = Vector2(1200, 460)
 rotation = 1.5708
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_gnhyj")
@@ -125,20 +188,79 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_gnhyj")
 
 [node name="Wall26" type="Sprite2D" parent="Walls"]
-position = Vector2(82, 456)
+position = Vector2(77, 457)
 rotation = 4.71239
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_gnhyj")
 
 [node name="Wall28" type="Sprite2D" parent="Walls"]
-position = Vector2(82, 532)
+position = Vector2(77, 533)
 rotation = 4.71239
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_gnhyj")
 
 [node name="Wall27" type="Sprite2D" parent="Walls"]
-position = Vector2(82, 380)
+position = Vector2(77, 381)
 rotation = 4.71239
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gnhyj")
+
+[node name="Wall36" type="Sprite2D" parent="Walls"]
+position = Vector2(77, 229)
+rotation = 4.71239
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gnhyj")
+
+[node name="Wall37" type="Sprite2D" parent="Walls"]
+position = Vector2(77, 153)
+rotation = 4.71239
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gnhyj")
+
+[node name="Wall38" type="Sprite2D" parent="Walls"]
+position = Vector2(77, 77)
+rotation = 4.71239
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gnhyj")
+
+[node name="Wall46" type="Sprite2D" parent="Walls"]
+position = Vector2(77, 39)
+rotation = 4.71239
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gnhyj")
+
+[node name="Wall39" type="Sprite2D" parent="Walls"]
+position = Vector2(563, 23)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gnhyj")
+
+[node name="Wall40" type="Sprite2D" parent="Walls"]
+position = Vector2(487, 23)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gnhyj")
+
+[node name="Wall41" type="Sprite2D" parent="Walls"]
+position = Vector2(411, 23)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gnhyj")
+
+[node name="Wall42" type="Sprite2D" parent="Walls"]
+position = Vector2(335, 23)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gnhyj")
+
+[node name="Wall43" type="Sprite2D" parent="Walls"]
+position = Vector2(259, 23)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gnhyj")
+
+[node name="Wall44" type="Sprite2D" parent="Walls"]
+position = Vector2(183, 23)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_gnhyj")
+
+[node name="Wall45" type="Sprite2D" parent="Walls"]
+position = Vector2(107, 23)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_gnhyj")
 
@@ -173,46 +295,60 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_gnhyj")
 
 [node name="Wall14" type="Sprite2D" parent="Walls"]
-position = Vector2(1171, 573)
+position = Vector2(1199, 573)
 rotation = 3.14159
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("5_i6fl3")
+texture = ExtResource("2_gnhyj")
 
-[node name="Wall15" type="Sprite2D" parent="Walls"]
-position = Vector2(1190, 573)
-rotation = 3.14159
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("5_i6fl3")
-
-[node name="Wall18" type="Sprite2D" parent="Walls"]
-position = Vector2(1226, 601)
+[node name="Wall7" type="Sprite2D" parent="Walls"]
+position = Vector2(1200, 536)
 rotation = 1.5708
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("6_o081h")
+texture = ExtResource("2_gnhyj")
 
-[node name="Wall17" type="Sprite2D" parent="Walls"]
-position = Vector2(1226, 583)
-rotation = 1.5708
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("6_o081h")
+[node name="Corridors" type="Node2D" parent="."]
 
-[node name="Wall16" type="Sprite2D" parent="Walls"]
-position = Vector2(1209, 573)
+[node name="WallPiece" parent="Corridors" instance=ExtResource("5_i6fl3")]
+position = Vector2(2, 438)
 rotation = 3.14159
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("5_i6fl3")
+
+[node name="WallPiece2" parent="Corridors" instance=ExtResource("5_i6fl3")]
+position = Vector2(2, 297)
+
+[node name="Room Objects" type="Node2D" parent="."]
+
+[node name="EmptyShelf" type="Sprite2D" parent="Room Objects"]
+position = Vector2(1183, 574)
+rotation = 1.5708
+texture = ExtResource("13_slxp1")
+
+[node name="EmptyShelf2" type="Sprite2D" parent="Room Objects"]
+position = Vector2(258, 606)
+rotation = 3.14159
+texture = ExtResource("13_slxp1")
+
+[node name="Pickups" type="Node2D" parent="."]
+
+[node name="Item" parent="Pickups" instance=ExtResource("10_tqfh3")]
+position = Vector2(1178, 574)
+ItemTexture = ExtResource("14_o081h")
+ItemID = 1
+Description = "A Golden Key that can unlock golden locks."
 
 [node name="Node2D" parent="." instance=ExtResource("2_xke0a")]
 position = Vector2(1079, 368)
 
-[node name="Door_2" parent="." instance=ExtResource("3_gnhyj")]
+[node name="Doors" type="Node2D" parent="."]
+
+[node name="Room1" type="Node2D" parent="Doors"]
+
+[node name="Room1-NorthDoor" parent="Doors/Room1" instance=ExtResource("3_gnhyj")]
 position = Vector2(646, 63)
-keyPad = ExtResource("4_bfsdq")
 DoorID = 2
-DoorKeyCode = 9564
+DoorKeyCode = -1
 openDoorSprite = ExtResource("8_nc2vx")
 
-[node name="Door_3" parent="." instance=ExtResource("3_gnhyj")]
+[node name="Room1-EastDoor" parent="Doors/Room1" instance=ExtResource("3_gnhyj")]
 position = Vector2(1220, 362)
 rotation = 1.5708
 keyPad = ExtResource("4_bfsdq")
@@ -220,19 +356,24 @@ DoorID = 3
 DoorKeyCode = 1111
 openDoorSprite = ExtResource("8_nc2vx")
 
-[node name="Door_4" parent="." instance=ExtResource("3_gnhyj")]
-position = Vector2(61, 362)
+[node name="Room1-WestDoor" parent="Doors/Room1" instance=ExtResource("3_gnhyj")]
+position = Vector2(59, 362)
 rotation = -1.5708
 DoorID = 4
+lockType = 1
+DoorKeyCode = 1
+openDoorSprite = ExtResource("8_nc2vx")
 
-[node name="Door_5" parent="." instance=ExtResource("3_gnhyj")]
+[node name="Room1-SouthDoor" parent="Doors/Room1" instance=ExtResource("3_gnhyj")]
 position = Vector2(660, 656)
 rotation = 3.14159
 DoorID = 5
 lockType = 1
 
+[node name="Room4" type="Node2D" parent="Doors"]
+
 [node name="Camera2D" parent="." instance=ExtResource("7_bfsdq")]
-position = Vector2(640, 360)
+position = Vector2(642.1, 360)
 
 [node name="Control" type="Control" parent="Camera2D"]
 layout_mode = 3
@@ -262,19 +403,44 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Room Objects" type="Node2D" parent="."]
+[node name="WallStaticBodies" type="Node2D" parent="."]
 
-[node name="EmptyShelf" type="Sprite2D" parent="Room Objects"]
-position = Vector2(1166, 574)
-rotation = 1.5708
-texture = ExtResource("13_slxp1")
+[node name="StaticBody2D" type="StaticBody2D" parent="WallStaticBodies"]
+collision_layer = 256
+collision_mask = 0
 
-[node name="EmptyShelf2" type="Sprite2D" parent="Room Objects"]
-position = Vector2(258, 606)
-rotation = 3.14159
-texture = ExtResource("13_slxp1")
+[node name="North1" type="CollisionShape2D" parent="WallStaticBodies/StaticBody2D"]
+position = Vector2(330, 85)
+shape = SubResource("RectangleShape2D_slxp1")
 
-[node name="Item" parent="." instance=ExtResource("10_tqfh3")]
-position = Vector2(1161, 574)
-ItemID = 1
-Description = "A Golden Key that can unlock golden locks."
+[node name="North2" type="CollisionShape2D" parent="WallStaticBodies/StaticBody2D"]
+position = Vector2(957, 85)
+shape = SubResource("RectangleShape2D_3tu3w")
+
+[node name="South1" type="CollisionShape2D" parent="WallStaticBodies/StaticBody2D"]
+position = Vector2(334.5, 632)
+shape = SubResource("RectangleShape2D_vhx0h")
+
+[node name="South2" type="CollisionShape2D" parent="WallStaticBodies/StaticBody2D"]
+position = Vector2(963.5, 633)
+shape = SubResource("RectangleShape2D_o081h")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="WallStaticBodies"]
+collision_layer = 256
+collision_mask = 0
+
+[node name="West1" type="CollisionShape2D" parent="WallStaticBodies/StaticBody2D2"]
+position = Vector2(104, 218)
+shape = SubResource("RectangleShape2D_i6fl3")
+
+[node name="West2" type="CollisionShape2D" parent="WallStaticBodies/StaticBody2D2"]
+position = Vector2(104, 503)
+shape = SubResource("RectangleShape2D_i6fl3")
+
+[node name="East1" type="CollisionShape2D" parent="WallStaticBodies/StaticBody2D2"]
+position = Vector2(1174, 218)
+shape = SubResource("RectangleShape2D_i6fl3")
+
+[node name="East2" type="CollisionShape2D" parent="WallStaticBodies/StaticBody2D2"]
+position = Vector2(1174, 503)
+shape = SubResource("RectangleShape2D_i6fl3")
