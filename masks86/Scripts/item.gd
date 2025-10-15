@@ -24,5 +24,6 @@ func PickUpItemHandler() -> void:
 	var p = get_tree().get_first_node_in_group("Player") as Player
 	p.AddItemToInventory(self)
 	call_deferred("queue_free")
+	#visible = false
 	
 	

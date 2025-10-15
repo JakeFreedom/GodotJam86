@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bc0aer2w073l"]
+[gd_scene load_steps=6 format=3 uid="uid://bc0aer2w073l"]
 
 [ext_resource type="Texture2D" uid="uid://djxl11qrdnxx6" path="res://icon.svg" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://b2ef1y23irrso" path="res://Scripts/player.gd" id="1_onrkg"]
+[ext_resource type="PackedScene" uid="uid://bf475n3oi0bui" path="res://inventory_ui.tscn" id="2_vgqql"]
 [ext_resource type="PackedScene" uid="uid://cgypqmip5ejnt" path="res://inventory.tscn" id="3_6t5aa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
@@ -11,6 +12,7 @@ radius = 35.0
 collision_mask = 7680
 motion_mode = 1
 script = ExtResource("1_onrkg")
+InventoryUI = ExtResource("2_vgqql")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
