@@ -36,6 +36,8 @@ func KeyCodeEnteredHandler(code: Array) -> void:
 		locked = false
 		static_body_2d.process_mode = Node.PROCESS_MODE_DISABLED
 		get_node("Sprite2D").texture = openDoorSprite
+		get_node("Sprite2D").rotation+=deg_to_rad(180.0)
+		keyPadScene.TheDoorHasOpened()
 	
 func area_2D_body_entered(otherBody: Node2D) -> void:
 	

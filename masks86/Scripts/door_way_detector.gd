@@ -18,7 +18,7 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	if SlideCam:
-		mainCam.position += incomingDirection * 500 * delta
+		mainCam.position += incomingDirection * 1000 * delta
 		
 		if incomingDirection == Vector2.UP or Vector2.DOWN:
 			endingPosition.y = camStartingPosition.y-650 if incomingDirection == Vector2.UP else camStartingPosition.y+650

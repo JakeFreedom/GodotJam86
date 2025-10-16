@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://v6v2h8k44pu5"]
+[gd_scene load_steps=9 format=3 uid="uid://v6v2h8k44pu5"]
 
 [ext_resource type="Script" uid="uid://cl55b4gdvjdkt" path="res://Scripts/key_pad.gd" id="1_hswn3"]
 [ext_resource type="Texture2D" uid="uid://cotrsraepvkka" path="res://Imports/KeyPad.png" id="1_p84af"]
 [ext_resource type="Texture2D" uid="uid://bqexhx5gfbovj" path="res://Imports/wall_1.png" id="2_6wrfb"]
+[ext_resource type="Texture2D" uid="uid://i0k63o8y238u" path="res://Imports/OpenDoor.png" id="2_rhbgq"]
 [ext_resource type="Script" uid="uid://jth0unbytdqg" path="res://Scripts/number_1.gd" id="3_hn84l"]
 [ext_resource type="Texture2D" uid="uid://darvijbqv4jtn" path="res://Imports/wall_7.png" id="3_rhbgq"]
 [ext_resource type="Texture2D" uid="uid://dukorgw60ic1n" path="res://Imports/decor_13.png" id="4_23gyr"]
@@ -17,17 +18,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hswn3")
+openedDoorTexture = ExtResource("2_rhbgq")
 
 [node name="Wall" type="Node2D" parent="."]
 position = Vector2(-712, -351)
 
 [node name="Wall1" type="Sprite2D" parent="Wall"]
+visible = false
 position = Vector2(319, 349)
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("2_6wrfb")
-
-[node name="Wall3" type="Sprite2D" parent="Wall"]
-position = Vector2(959, 349)
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_6wrfb")
 
@@ -45,6 +43,17 @@ texture = ExtResource("3_rhbgq")
 visible = false
 position = Vector2(669, 290)
 texture = ExtResource("3_rhbgq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(256, 350)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_6wrfb")
+
+[node name="Wall3" type="Sprite2D" parent="Wall"]
+position = Vector2(795, 349)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_6wrfb")
 
 [node name="Decor13" type="Sprite2D" parent="Wall"]
 position = Vector2(215, 300)
