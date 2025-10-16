@@ -10,7 +10,7 @@ size = Vector2(120, 38.3333)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0phs7"]
 size = Vector2(300, 140)
 
-[node name="Door" type="Node2D"]
+[node name="Door" type="Node2D" groups=["Door"]]
 script = ExtResource("1_v6xrn")
 
 [node name="Area2D" type="Area2D" parent="."]

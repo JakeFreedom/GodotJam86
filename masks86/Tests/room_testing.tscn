@@ -382,6 +382,18 @@ lockType = 1
 
 [node name="Room4" type="Node2D" parent="Doors"]
 
+[node name="Mirror" type="Sprite2D" parent="."]
+position = Vector2(1144, 90)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("19_52mek")
+
+[node name="POITriggers3" parent="." instance=ExtResource("14_slxp1")]
+position = Vector2(1144, 129)
+POIScene = ExtResource("15_slxp1")
+poiObject = ExtResource("19_52mek")
+POIMirror = true
+POIMirrorControlDoor = 5
+
 [node name="Camera2D" parent="." instance=ExtResource("7_bfsdq")]
 position = Vector2(642.1, 360)
 
@@ -467,7 +479,4 @@ scale = Vector2(0.4, 1)
 POIScene = ExtResource("15_slxp1")
 poiObject = ExtResource("18_rmlw0")
 
-[node name="Mirror" type="Sprite2D" parent="."]
-position = Vector2(1144, 90)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("19_52mek")
+[node name="MirrorPOI" type="Node2D" parent="."]

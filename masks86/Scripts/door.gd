@@ -1,4 +1,10 @@
+class_name Door
 extends Node2D
+
+#Notes about door key codes.
+#A keycode of -1 is an open and unlocked door
+#A Lock Type of 1 requires a key to open the door -- Lock Type 2 will require a mask to open the door.
+#If a door has a keypad scene that will be use the key code for keypad code -- Lock type is 0
 
 signal IncorrectKey(doorID)
 
@@ -71,4 +77,11 @@ func area_2D_body_entered(otherBody: Node2D) -> void:
 						get_node("Sprite2D").texture = openDoorSprite
 						get_node("Sprite2D").rotation+=deg_to_rad(180.0)
 			IncorrectKey.emit(DoorID)
+	pass
+
+
+
+func PrintDoorCode() -> void:
+	print(DoorKeyCode)
+	print(lockType)
 	pass
