@@ -28,6 +28,7 @@ window/stretch/mode="viewport"
 Player=""
 MainCam=""
 Door=""
+InventoryBar=""
 
 [input]
 

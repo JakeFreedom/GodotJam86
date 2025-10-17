@@ -9,10 +9,19 @@ signal PickUpItem
 @export var ItemTexture: Texture
 @export var ItemID: int
 @export var Description: String
+@export var scaleOverRide: Vector2 = Vector2(1.0, 1.0)
+@export var ItemType : int = 0 #See Note below
+#################
+#
+# For now Keys will be type 1
+# Masks will be type 2
+# we will just add more as we need. Again, this is the wrong approach, but we are running out of time.
+##
 
 func _ready() -> void:
 	get_node("Area2D").PickUpItem.connect(PickUpItemHandler)
 	sprite_2d.texture = ItemTexture
+	sprite_2d.scale = scaleOverRide
 	#var vis = visual.instantiate()
 	#add_child(vis)
 	

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cf0oud452rdso"]
+
+[ext_resource type="Script" uid="uid://buabwb0t5300r" path="res://Scripts/mask.gd" id="1_nr6xi"]
+
+[node name="Mask" type="Node2D"]
+script = ExtResource("1_nr6xi")
+
+[node name="Graphic" type="Sprite2D" parent="."]

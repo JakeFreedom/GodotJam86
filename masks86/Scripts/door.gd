@@ -27,9 +27,7 @@ var keyPadScene
 
 func _ready() -> void:
 	if DoorKeyCode == -1:
-		locked = false
-		static_body_2d.process_mode = Node.PROCESS_MODE_DISABLED
-		get_node("Sprite2D").texture = openDoorSprite
+		ChangeToUnlockMode()
 		
 	area_2d.body_entered.connect(area_2D_body_entered)
 		
@@ -39,9 +37,7 @@ func KeyCodeEnteredHandler(code: Array) -> void:
 		pulledCode+=str(num)
 		
 	if pulledCode == str(DoorKeyCode):
-		locked = false
-		static_body_2d.process_mode = Node.PROCESS_MODE_DISABLED
-		get_node("Sprite2D").texture = openDoorSprite
+		ChangeToUnlockMode()
 		get_node("Sprite2D").rotation+=deg_to_rad(180.0)
 		keyPadScene.TheDoorHasOpened()
 	
@@ -51,9 +47,9 @@ func area_2D_body_entered(otherBody: Node2D) -> void:
 	if otherBody.is_in_group("Player"):
 		#When you walk up to a door we need to check to see if it's unlocked
 		if not locked:
-			static_body_2d.process_mode = Node.PROCESS_MODE_DISABLED
+			DisableBarrier()
 			get_node("Sprite2D").rotation+=deg_to_rad(180.0)
-			print(get_node("Sprite2D").rotation)
+			#print(get_node("Sprite2D").rotation)
 
 		else:	
 			if keyPad != null:
@@ -72,16 +68,24 @@ func area_2D_body_entered(otherBody: Node2D) -> void:
 				var p = otherBody as Player
 				for k in otherBody.CheckInventory().GetInventory():
 					if k.ItemID == self.DoorKeyCode:
-						locked = false
-						static_body_2d.process_mode = Node.PROCESS_MODE_DISABLED
-						get_node("Sprite2D").texture = openDoorSprite
+						ChangeToUnlockMode()
 						get_node("Sprite2D").rotation+=deg_to_rad(180.0)
-			IncorrectKey.emit(DoorID)
-	pass
-
+			IncorrectKey.emit(DoorID) #This will need to display a message to the user
 
 
 func PrintDoorCode() -> void:
 	print(DoorKeyCode)
 	print(lockType)
-	pass
+
+
+func DisableBarrier() -> void:
+	static_body_2d.process_mode = Node.PROCESS_MODE_DISABLED
+
+func ChangeToUnlockMode() -> void:
+	locked = false;
+	DisableBarrier()
+	get_node("Sprite2D").texture = openDoorSprite
+
+func UnlockDoor() -> void:
+	ChangeToUnlockMode()
+	

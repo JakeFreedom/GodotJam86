@@ -6,6 +6,7 @@ extends CharacterBody2D
 
 var lastVelocity: Vector2
 var ourInventory
+var maskID : int = 0
 
 func _ready() -> void:
 	ourInventory = get_node("Inventory") as Inventory
@@ -46,5 +47,6 @@ func AddItemToInventory(item: Item) -> void:
 func CheckInventory() -> Inventory:
 	return ourInventory
 	
+#This method is here to just call when testing to see if we have access to the player.	
 func IAmThePlayer() -> void:
 	print("I am the player")

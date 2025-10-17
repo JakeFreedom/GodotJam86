@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://da6n55jketmjl"]
 
 [ext_resource type="Texture2D" uid="uid://bqexhx5gfbovj" path="res://Imports/wall_1.png" id="1_pyct1"]
-[ext_resource type="Script" uid="uid://cvwdk8qtprwpt" path="res://wall_poi.gd" id="1_vk5i6"]
+[ext_resource type="Script" uid="uid://cvwdk8qtprwpt" path="res://Scripts/wall_poi.gd" id="1_vk5i6"]
 
 [node name="WallPOI" type="Control"]
 layout_mode = 3

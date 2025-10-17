@@ -9,8 +9,11 @@ extends Node2D
 @export var POIMirrorControlDoor: int = -1
 
 @onready var sw_table: Area2D = $SWTable
-@onready var h_box_container: HBoxContainer = $"../Camera2D/Control/VBoxContainer/HBoxContainer"
+#@onready var h_box_container: HBoxContainer = $"../Camera2D/Control/VBoxContainer/HBoxContainer"
+@onready var h_box_container: HBoxContainer = %HBoxContainer
 
+
+var workingDoor: Door
 
 func _ready() -> void:
 	sw_table.body_entered.connect(OnBodyEntered)
@@ -35,16 +38,28 @@ func OnBodyEntered(otherBody: CharacterBody2D)-> void:
 			#We need to access the player and see if they are wearing the correct mask
 			#then check that against the door that corresponds to this POI
 			var p = otherBody as Player # get the player
-			p.IAmThePlayer()
+			var playerInventory = p.CheckInventory()
+			var invItem = playerInventory.GetInventory()
 			var poi = POIScene.instantiate()
 			h_box_container.add_child(poi)
 			poi.SetPOIObject(poiObject)
 			get_tree().paused = true
-			pass
 			
-		#var doors: Array = get_tree().get_nodes_in_group("Door")
-		#for d in doors:
-			#d.PrintDoorCode()
+			#lets get the door that we need to work with
+						#get the doors
+			var doors: Array = get_tree().get_nodes_in_group("Door")
+			#get the door that we need
+			for d in doors:
+				if d.DoorID == POIMirrorControlDoor:
+					workingDoor = d
+			#Get all the masks we have to see if we have the correct one
+			var masks: Array = playerInventory.GetInventoryByType(2)
+			for mask in masks:
+				if mask.ItemID  == workingDoor.DoorKeyCode:
+					workingDoor.UnlockDoor()
+			
+
+					
 	#This works great for things we just have to look at, the mirror is
 	#something we have to look at. Some how we have to be able to find
 	#all the doors and look at each one to see if it will open with the mask we have one.
