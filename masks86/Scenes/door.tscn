@@ -14,7 +14,7 @@ size = Vector2(300, 140)
 script = ExtResource("1_v6xrn")
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(0, 9)
+position = Vector2(0, 11)
 scale = Vector2(0.3, 0.3)
 collision_layer = 1024
 

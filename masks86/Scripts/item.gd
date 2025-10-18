@@ -18,6 +18,8 @@ signal PickUpItem
 # we will just add more as we need. Again, this is the wrong approach, but we are running out of time.
 ##
 
+var isSelected: bool = false
+
 func _ready() -> void:
 	get_node("Area2D").PickUpItem.connect(PickUpItemHandler)
 	sprite_2d.texture = ItemTexture

@@ -1,0 +1,243 @@
+[gd_scene load_steps=2 format=3 uid="uid://di38lvyvjpvel"]
+
+[ext_resource type="Texture2D" uid="uid://bqexhx5gfbovj" path="res://Imports/wall_1.png" id="1_xxkwp"]
+
+[node name="Walls" type="Node2D"]
+
+[node name="Wall1" type="Sprite2D" parent="."]
+position = Vector2(731, 23)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall2" type="Sprite2D" parent="."]
+position = Vector2(807, 23)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall3" type="Sprite2D" parent="."]
+position = Vector2(883.5, 23)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall4" type="Sprite2D" parent="."]
+position = Vector2(960, 23)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall29" type="Sprite2D" parent="."]
+position = Vector2(1036, 23)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall30" type="Sprite2D" parent="."]
+position = Vector2(1112, 23)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall35" type="Sprite2D" parent="."]
+position = Vector2(1188, 23)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall31" type="Sprite2D" parent="."]
+position = Vector2(1200.4, 39.4)
+rotation = 1.5708
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall32" type="Sprite2D" parent="."]
+position = Vector2(1200.4, 115.4)
+rotation = 1.5708
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall33" type="Sprite2D" parent="."]
+position = Vector2(1200.4, 191.4)
+rotation = 1.5708
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall34" type="Sprite2D" parent="."]
+position = Vector2(1200.4, 219.4)
+rotation = 1.5708
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall5" type="Sprite2D" parent="."]
+position = Vector2(1200, 383)
+rotation = 1.5708
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall6" type="Sprite2D" parent="."]
+position = Vector2(1200, 460)
+rotation = 1.5708
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall8" type="Sprite2D" parent="."]
+position = Vector2(743, 573)
+rotation = 3.14159
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall19" type="Sprite2D" parent="."]
+position = Vector2(576, 573)
+rotation = 3.14159
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall20" type="Sprite2D" parent="."]
+position = Vector2(500, 573)
+rotation = 3.14159
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall21" type="Sprite2D" parent="."]
+position = Vector2(424, 573)
+rotation = 3.14159
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall22" type="Sprite2D" parent="."]
+position = Vector2(348, 573)
+rotation = 3.14159
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall23" type="Sprite2D" parent="."]
+position = Vector2(272, 573)
+rotation = 3.14159
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall24" type="Sprite2D" parent="."]
+position = Vector2(196, 573)
+rotation = 3.14159
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall25" type="Sprite2D" parent="."]
+position = Vector2(120, 573)
+rotation = 3.14159
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall26" type="Sprite2D" parent="."]
+position = Vector2(77, 457)
+rotation = 4.71239
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall28" type="Sprite2D" parent="."]
+position = Vector2(77, 533)
+rotation = 4.71239
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall27" type="Sprite2D" parent="."]
+position = Vector2(77, 381)
+rotation = 4.71239
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall36" type="Sprite2D" parent="."]
+position = Vector2(77, 229)
+rotation = 4.71239
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall37" type="Sprite2D" parent="."]
+position = Vector2(77, 153)
+rotation = 4.71239
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall38" type="Sprite2D" parent="."]
+position = Vector2(77, 77)
+rotation = 4.71239
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall46" type="Sprite2D" parent="."]
+position = Vector2(77, 39)
+rotation = 4.71239
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall39" type="Sprite2D" parent="."]
+position = Vector2(563, 23)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall40" type="Sprite2D" parent="."]
+position = Vector2(487, 23)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall41" type="Sprite2D" parent="."]
+position = Vector2(411, 23)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall42" type="Sprite2D" parent="."]
+position = Vector2(335, 23)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall43" type="Sprite2D" parent="."]
+position = Vector2(259, 23)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall44" type="Sprite2D" parent="."]
+position = Vector2(183, 23)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall45" type="Sprite2D" parent="."]
+position = Vector2(107, 23)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall9" type="Sprite2D" parent="."]
+position = Vector2(819, 573)
+rotation = 3.14159
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall10" type="Sprite2D" parent="."]
+position = Vector2(895, 573)
+rotation = 3.14159
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall11" type="Sprite2D" parent="."]
+position = Vector2(971, 573)
+rotation = 3.14159
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall12" type="Sprite2D" parent="."]
+position = Vector2(1047, 573)
+rotation = 3.14159
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall13" type="Sprite2D" parent="."]
+position = Vector2(1123, 573)
+rotation = 3.14159
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall14" type="Sprite2D" parent="."]
+position = Vector2(1199, 573)
+rotation = 3.14159
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")
+
+[node name="Wall7" type="Sprite2D" parent="."]
+position = Vector2(1200, 536)
+rotation = 1.5708
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xxkwp")

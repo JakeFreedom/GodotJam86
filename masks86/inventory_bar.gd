@@ -26,4 +26,3 @@ func GetFirstEmptySlot(item: Item)-> void:
 			k.SetSlotItem(item)
 			break
 	
-	pass

@@ -7,6 +7,7 @@ extends Node2D
 #If a door has a keypad scene that will be use the key code for keypad code -- Lock type is 0
 
 signal IncorrectKey(doorID)
+signal IncorrectMask(doorID)
 
 @onready var static_body_2d: StaticBody2D = $Sprite2D/StaticBody2D
 #@onready var h_box_container: HBoxContainer = $"../Camera2D/Control/VBoxContainer/HBoxContainer"  #This needs to be diffrent. The camera should not be in charge of where things spawn But works for now
@@ -68,10 +69,15 @@ func area_2D_body_entered(otherBody: Node2D) -> void:
 				var p = otherBody as Player
 				for k in otherBody.CheckInventory().GetInventory():
 					if k.ItemID == self.DoorKeyCode:
-						ChangeToUnlockMode()
-						get_node("Sprite2D").rotation+=deg_to_rad(180.0)
-			IncorrectKey.emit(DoorID) #This will need to display a message to the user
-
+						#We have the item is it selected
+						if k.isSelected:
+							ChangeToUnlockMode()
+							get_node("Sprite2D").rotation+=deg_to_rad(180.0)
+					else:
+						IncorrectKey.emit(DoorID)
+				IncorrectKey.emit(DoorID)
+			else:
+				IncorrectMask.emit(DoorID)
 
 func PrintDoorCode() -> void:
 	print(DoorKeyCode)
