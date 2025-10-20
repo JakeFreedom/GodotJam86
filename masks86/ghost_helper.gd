@@ -6,12 +6,13 @@ extends Sprite2D
 
 func _ready() -> void:
 	PlayIdle()
-	dialog.SetMessageText("Hello", 4.0)	
-	get_tree().create_timer(4).timeout.connect(DeleteGhost)
+	#get_tree().create_timer(30).timeout.connect(DeleteGhost)
 
 func PlayIdle() -> void:
 	animation_player.play("Idle")
 	
 	
 func DeleteGhost() -> void:
+	self.visible = false
+	animation_player.stop()
 	queue_free()

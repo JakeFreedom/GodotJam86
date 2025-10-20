@@ -18,6 +18,7 @@ func GenerateFloor() -> void:
 		tile.texture = floorTile
 		tile.scale = Vector2(.5,.5)
 		tile.position = Vector2(xPos, yPos)
+		tile.z_index = -2
 		add_child(tile)
 		xPos+=128
 		if xPos >= 8192:

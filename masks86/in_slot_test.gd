@@ -38,3 +38,7 @@ func IAmTheInventorySlot()-> void:
 		sprite_2d.texture = selectedItem
 		IAmSelected = true
 		Selected.emit()
+		
+func ClearItem()-> void:
+	sprite_2d_2.texture = null
+	sprite_2d.texture = normalItem

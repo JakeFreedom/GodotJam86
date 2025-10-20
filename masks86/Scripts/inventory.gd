@@ -14,11 +14,13 @@ func AddItem(item: Item )-> void:
 	var i = item.duplicate()
 	#here is where we will need to add this sprite to the inventory bar slot
 	var invBar: InventoryBar = get_tree().get_first_node_in_group("InventoryBar")
-	invBar.IAmTheInventoryBar()
+	#invBar.IAmTheInventoryBar()
 	invBar.AddItem(i)
 	items.append(i)
+	#print("Item " + str(i.ItemID) + " was added: " + str(items.size()))
 	
 func GetInventory()-> Array:
+	#print("currect inv count " + str(items.size()))
 	return items
 	
 	

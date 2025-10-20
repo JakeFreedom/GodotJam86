@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://v6v2h8k44pu5"]
+[gd_scene load_steps=13 format=3 uid="uid://v6v2h8k44pu5"]
 
 [ext_resource type="Script" uid="uid://cl55b4gdvjdkt" path="res://Scripts/key_pad.gd" id="1_hswn3"]
 [ext_resource type="Texture2D" uid="uid://cotrsraepvkka" path="res://Imports/KeyPad.png" id="1_p84af"]
@@ -8,9 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://darvijbqv4jtn" path="res://Imports/wall_7.png" id="3_rhbgq"]
 [ext_resource type="Texture2D" uid="uid://dukorgw60ic1n" path="res://Imports/decor_13.png" id="4_23gyr"]
 [ext_resource type="Texture2D" uid="uid://04ke1gebgqir" path="res://Imports/CloseButton.png" id="6_23gyr"]
+[ext_resource type="FontFile" uid="uid://dq0pkpo3hyeds" path="res://Imports/Constantia Regular.ttf" id="9_qt7ed"]
+[ext_resource type="AudioStream" uid="uid://b0ux14kctb4ea" path="res://Imports/Audio/keyPadClick.mp3" id="10_bf8ia"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hswn3"]
 size = Vector2(55, 53)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bf8ia"]
 
 [node name="DoorKeyPad" type="Panel"]
 anchors_preset = 15
@@ -102,6 +106,15 @@ number = 1
 process_mode = 2
 shape = SubResource("RectangleShape2D_hswn3")
 
+[node name="Label" type="Label" parent="NumberPadButtons/Number1"]
+offset_left = -15.0
+offset_top = -53.0
+offset_right = 25.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("9_qt7ed")
+theme_override_font_sizes/font_size = 100
+text = "1"
+
 [node name="Number2" type="Area2D" parent="NumberPadButtons"]
 process_mode = 2
 position = Vector2(0, -74)
@@ -111,6 +124,15 @@ number = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NumberPadButtons/Number2"]
 process_mode = 2
 shape = SubResource("RectangleShape2D_hswn3")
+
+[node name="Label" type="Label" parent="NumberPadButtons/Number2"]
+offset_left = -22.0
+offset_top = -53.0
+offset_right = 26.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("9_qt7ed")
+theme_override_font_sizes/font_size = 100
+text = "2"
 
 [node name="Number3" type="Area2D" parent="NumberPadButtons"]
 process_mode = 2
@@ -122,6 +144,16 @@ number = 3
 process_mode = 2
 shape = SubResource("RectangleShape2D_hswn3")
 
+[node name="Label" type="Label" parent="NumberPadButtons/Number3"]
+offset_left = -13.0
+offset_top = -44.0
+offset_right = 33.0
+offset_bottom = 27.0
+theme_override_fonts/font = ExtResource("9_qt7ed")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bf8ia")
+text = "3"
+
 [node name="Number4" type="Area2D" parent="NumberPadButtons"]
 process_mode = 2
 position = Vector2(-81, 6)
@@ -131,6 +163,15 @@ number = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NumberPadButtons/Number4"]
 process_mode = 2
 shape = SubResource("RectangleShape2D_hswn3")
+
+[node name="Label" type="Label" parent="NumberPadButtons/Number4"]
+offset_left = -22.0
+offset_top = -47.0
+offset_right = 31.0
+offset_bottom = 29.0
+theme_override_fonts/font = ExtResource("9_qt7ed")
+theme_override_font_sizes/font_size = 75
+text = "4"
 
 [node name="Number5" type="Area2D" parent="NumberPadButtons"]
 process_mode = 2
@@ -142,6 +183,15 @@ number = 5
 process_mode = 2
 shape = SubResource("RectangleShape2D_hswn3")
 
+[node name="Label" type="Label" parent="NumberPadButtons/Number5"]
+offset_left = -16.0
+offset_top = -48.0
+offset_right = 24.0
+offset_bottom = 28.0
+theme_override_fonts/font = ExtResource("9_qt7ed")
+theme_override_font_sizes/font_size = 75
+text = "5"
+
 [node name="Number6" type="Area2D" parent="NumberPadButtons"]
 process_mode = 2
 position = Vector2(80, 6)
@@ -151,6 +201,15 @@ number = 6
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NumberPadButtons/Number6"]
 process_mode = 2
 shape = SubResource("RectangleShape2D_hswn3")
+
+[node name="Label" type="Label" parent="NumberPadButtons/Number6"]
+offset_left = -20.0
+offset_top = -32.0
+offset_right = 21.0
+offset_bottom = 44.0
+theme_override_fonts/font = ExtResource("9_qt7ed")
+theme_override_font_sizes/font_size = 75
+text = "6"
 
 [node name="Number7" type="Area2D" parent="NumberPadButtons"]
 process_mode = 2
@@ -162,6 +221,15 @@ number = 7
 process_mode = 2
 shape = SubResource("RectangleShape2D_hswn3")
 
+[node name="Label" type="Label" parent="NumberPadButtons/Number7"]
+offset_left = -17.0
+offset_top = -48.0
+offset_right = 23.0
+offset_bottom = 28.0
+theme_override_fonts/font = ExtResource("9_qt7ed")
+theme_override_font_sizes/font_size = 75
+text = "7"
+
 [node name="Number8" type="Area2D" parent="NumberPadButtons"]
 process_mode = 2
 position = Vector2(0, 85)
@@ -172,6 +240,15 @@ number = 8
 process_mode = 2
 shape = SubResource("RectangleShape2D_hswn3")
 
+[node name="Label" type="Label" parent="NumberPadButtons/Number8"]
+offset_left = -21.0
+offset_top = -32.0
+offset_right = 19.0
+offset_bottom = 44.0
+theme_override_fonts/font = ExtResource("9_qt7ed")
+theme_override_font_sizes/font_size = 75
+text = "8"
+
 [node name="Number9" type="Area2D" parent="NumberPadButtons"]
 process_mode = 2
 position = Vector2(81, 85)
@@ -181,3 +258,16 @@ number = 9
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NumberPadButtons/Number9"]
 process_mode = 2
 shape = SubResource("RectangleShape2D_hswn3")
+
+[node name="Label" type="Label" parent="NumberPadButtons/Number9"]
+offset_left = -19.0
+offset_top = -48.0
+offset_right = 22.0
+offset_bottom = 28.0
+theme_override_fonts/font = ExtResource("9_qt7ed")
+theme_override_font_sizes/font_size = 75
+text = "9"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("10_bf8ia")

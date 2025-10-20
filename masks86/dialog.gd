@@ -8,7 +8,7 @@ extends Node2D
 var startFade: bool = false
 
 func _ready() -> void:
-	get_tree().create_timer(10).timeout.connect(DeleteMessage)
+	#get_tree().create_timer(10).timeout.connect(DeleteMessage)
 	
 	pass
 
@@ -16,8 +16,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if startFade:
 		sprite_2d.modulate.a = sprite_2d.modulate.a - delta
-	pass
-
+		if sprite_2d.modulate.a <= 0:
+			startFade = false
+			get_parent().queue_free()
 func StartFade() -> void:
 	startFade = true
 

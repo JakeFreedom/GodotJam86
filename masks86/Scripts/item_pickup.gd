@@ -19,4 +19,4 @@ func _unhandled_input(event: InputEvent) -> void:
 	pass
 	
 func OnBodyEntered(otherBody: Node2D) -> void:
-	print(otherBody)
+	pass

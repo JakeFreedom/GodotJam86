@@ -55,8 +55,10 @@ func OnBodyEntered(otherBody: CharacterBody2D)-> void:
 			#Get all the masks we have to see if we have the correct one
 			var masks: Array = playerInventory.GetInventoryByType(2)
 			for mask in masks:
+				#print(mask.ItemID)
 				if mask.ItemID  == workingDoor.DoorKeyCode:
 					if mask.isSelected: #Make sure the mask is selected.
+						print(workingDoor.DoorID)
 						workingDoor.UnlockDoor()
 			
 
