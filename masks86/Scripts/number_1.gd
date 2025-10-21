@@ -11,5 +11,4 @@ func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void
 		if event is InputEventMouseButton:
 			if event.button_index == 1:
 				#user has left clicked
-				print("You have clicked on " + str(number))
 				door_key_pad.PrintNumber(number)

@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://5hdjinmet87j"]
+
+[ext_resource type="Script" uid="uid://cgfmq5s0mrh7s" path="res://in_slot_test.gd" id="1_kmxwt"]
+[ext_resource type="Texture2D" uid="uid://bbp06ujuuftn7" path="res://Imports/InventorySlotBackGround.png" id="1_r6iux"]
+[ext_resource type="Script" uid="uid://b8ig2m3tsqqr" path="res://invBarClickable.gd" id="3_ux3rc"]
+[ext_resource type="AudioStream" uid="uid://cqje02w5jqnrw" path="res://Imports/Audio/invBoardSelectClick.mp3" id="4_ems4u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmxwt"]
+size = Vector2(28, 28)
+
+[node name="InventorySlot" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_vertical = 3
+mouse_filter = 1
+script = ExtResource("1_kmxwt")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_ux3rc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_kmxwt")
+
+[node name="BackGround" type="Sprite2D" parent="."]
+texture = ExtResource("1_r6iux")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ems4u")

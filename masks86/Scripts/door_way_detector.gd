@@ -10,34 +10,37 @@ var camStartingPosition
 var SlideCam : bool = false
 var incomingDirection: Vector2
 var endingPosition: Vector2
+var player: Player
 
 func _ready() -> void:
 	area_2d.body_entered.connect(OnBodyEntered)
+	mainCam = get_tree().get_first_node_in_group("MainCam") as Camera2D
 	
 func _process(delta: float) -> void:
 	if SlideCam:
-		mainCam.position += incomingDirection * 500 * delta
+		mainCam.position += incomingDirection * 1000 * delta
 		
 		if incomingDirection == Vector2.UP or Vector2.DOWN:
-			endingPosition.y = incomingDirection.y*320 if incomingDirection ==Vector2.UP else incomingDirection.y*-358
+			endingPosition.y = camStartingPosition.y-650 if incomingDirection == Vector2.UP else camStartingPosition.y+650
 			if incomingDirection == Vector2.UP and mainCam.position.y <= endingPosition.y: 
 				SlideCam = false
-			elif incomingDirection == Vector2.DOWN and mainCam.position.y >= -endingPosition.y:
+			elif incomingDirection == Vector2.DOWN and mainCam.position.y >= endingPosition.y:
 				SlideCam = false
+
 		if incomingDirection == Vector2.LEFT or Vector2.RIGHT:
-			endingPosition.x = incomingDirection.x*1800 if incomingDirection == Vector2.RIGHT else incomingDirection.x-640
+			endingPosition.x = incomingDirection.x*(camStartingPosition.x+1200) if incomingDirection == Vector2.RIGHT else camStartingPosition.x-1200
 			if incomingDirection == Vector2.RIGHT and mainCam.position.x >= endingPosition.x: 
 				SlideCam = false
-			elif incomingDirection == Vector2.LEFT and mainCam.position.x <= -endingPosition.x:
+			elif incomingDirection == Vector2.LEFT and mainCam.position.x <= endingPosition.x:
 				SlideCam = false
+
 	
-		print(endingPosition)
 func OnBodyEntered(otherBody: Node2D) -> void:
-	#print("scroll half screen in " + str(direction) + " direction")
-	
-	incomingDirection = otherBody.lastVelocity
-	print(incomingDirection)
-	camStartingPosition = mainCam.position
-	#screen is 1080 in height
-	if direction != Vector2.ZERO:
-		SlideCam = true
+	if not SlideCam:
+		player = otherBody
+		incomingDirection = player.lastVelocity
+		camStartingPosition = mainCam.position
+		#screen is 1080 in height
+		if incomingDirection != Vector2.ZERO:
+			SlideCam = true
+		

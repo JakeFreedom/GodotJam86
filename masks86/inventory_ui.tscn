@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf475n3oi0bui"]
+
+[ext_resource type="PackedScene" uid="uid://5hdjinmet87j" path="res://inSlotTest.tscn" id="1_5v8q7"]
+[ext_resource type="Script" uid="uid://b0ycdtfeaonph" path="res://inventory_ui.gd" id="1_gf3dx"]
+
+[node name="InventoryUI" type="Control"]
+layout_mode = 3
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 320.0
+offset_bottom = -360.0
+grow_vertical = 2
+size_flags_horizontal = 10
+size_flags_vertical = 3
+script = ExtResource("1_gf3dx")
+invSlot = ExtResource("1_5v8q7")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 300.0
+offset_right = 620.0
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "INVENTORY"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 15
+
+[node name="HFlowContainer" type="HFlowContainer" parent="Panel/VBoxContainer/VBoxContainer2/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 65
+theme_override_constants/v_separation = 65

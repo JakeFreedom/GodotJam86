@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://bnyhj71sdlqwa"]
+
+[ext_resource type="Texture2D" uid="uid://cn6qhxbi4tjuf" path="res://Imports/newGameButton.png" id="1_eiy7p"]
+[ext_resource type="Script" uid="uid://1yl41orjf7uw" path="res://main_menu.gd" id="1_qoqlk"]
+[ext_resource type="Texture2D" uid="uid://bq5kjkd8jcc06" path="res://Imports/quitButton.png" id="2_h7a2f"]
+[ext_resource type="Texture2D" uid="uid://qlvhiharosua" path="res://Imports/mainMenuBackgrou.png" id="2_iwfq2"]
+[ext_resource type="AudioStream" uid="uid://bcu2ldpprcjfb" path="res://Imports/Audio/mainMenuMusic.mp3" id="5_iwfq2"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qoqlk")
+
+[node name="MainMenuBackgrou" type="Sprite2D" parent="."]
+position = Vector2(620, 382)
+texture = ExtResource("2_iwfq2")
+
+[node name="New Game" type="Button" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 320.0
+offset_right = 667.0
+offset_bottom = 498.0
+icon = ExtResource("1_eiy7p")
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 661.0
+offset_top = 320.0
+offset_right = 1261.0
+offset_bottom = 498.0
+icon = ExtResource("2_h7a2f")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_iwfq2")
+volume_db = -10.0

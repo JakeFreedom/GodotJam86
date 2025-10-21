@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://da6n55jketmjl"]
+
+[ext_resource type="Texture2D" uid="uid://bqexhx5gfbovj" path="res://Imports/wall_1.png" id="1_pyct1"]
+[ext_resource type="Script" uid="uid://cvwdk8qtprwpt" path="res://Scripts/wall_poi.gd" id="1_vk5i6"]
+[ext_resource type="Texture2D" uid="uid://04ke1gebgqir" path="res://Imports/CloseButton.png" id="3_dx5ec"]
+
+[node name="WallPOI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_vk5i6")
+
+[node name="Walls" type="Node2D" parent="."]
+position = Vector2(-321, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls"]
+position = Vector2(1, 0)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_pyct1")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Walls"]
+position = Vector2(641, 0)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_pyct1")
+
+[node name="Button" type="Button" parent="."]
+process_mode = 3
+custom_minimum_size = Vector2(275, 0)
+layout_mode = 0
+offset_left = 228.0
+offset_top = 146.0
+offset_right = 785.0
+offset_bottom = 324.0
+scale = Vector2(0.7, 0.7)
+icon = ExtResource("3_dx5ec")
+
+[node name="POI" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+
+[node name="RoomObject" type="Sprite2D" parent="."]
+position = Vector2(-393, 111)
+scale = Vector2(2, 2)

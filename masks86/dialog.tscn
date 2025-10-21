@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bk5ik3vqvs3h6"]
+
+[ext_resource type="Script" uid="uid://c2cnfooh23rnp" path="res://dialog.gd" id="1_5wlj5"]
+[ext_resource type="Texture2D" uid="uid://0tkveq3a2hvx" path="res://Imports/Inner_UI_0014_Layer-3.png" id="1_7voku"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_w7j6r"]
+font_color = Color(0.772549, 1, 0, 1)
+
+[node name="Dialog" type="Node2D"]
+script = ExtResource("1_5wlj5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_7voku")
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_left = -129.0
+offset_top = -105.0
+offset_right = 121.0
+offset_bottom = 67.0
+text = "This is the text that will be in the message"
+label_settings = SubResource("LabelSettings_w7j6r")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

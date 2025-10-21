@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://465prmmq2rm4"]
+[gd_scene load_steps=3 format=3 uid="uid://5tuftno2p71"]
 
 [sub_resource type="GDScript" id="GDScript_f4jn7"]
 script/source = "extends Area2D

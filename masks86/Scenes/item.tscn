@@ -1,15 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cx26en5dk73ei"]
+[gd_scene load_steps=4 format=3 uid="uid://cx26en5dk73ei"]
 
 [ext_resource type="Script" uid="uid://gh36tdv3tysp" path="res://Scripts/item.gd" id="1_tnite"]
-[ext_resource type="PackedScene" uid="uid://duoe28rl0cp82" path="res://Scenes/door_key.tscn" id="2_kg5e7"]
 [ext_resource type="Script" uid="uid://cuekqfcic1m6d" path="res://Scripts/item_pickup.gd" id="3_ys7tt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_unjj8"]
-radius = 25.28
+radius = 24.0
 
 [node name="Item" type="Node2D"]
 script = ExtResource("1_tnite")
-visual = ExtResource("2_kg5e7")
 
 [node name="Area2D" type="Area2D" parent="."]
 process_mode = 3
@@ -18,3 +16,6 @@ script = ExtResource("3_ys7tt")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 process_mode = 3
 shape = SubResource("CircleShape2D_unjj8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
